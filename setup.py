@@ -21,8 +21,7 @@ setup(name='CrudeOilBlending',
       long_description_content_type='text/markdown',
       author='Yifei Huang',
       author_email='',
-      #TODO
-      url='https://github.com/yfhuang88/crudeoilblending',
+      url='https://github.com/yfhuang88/CrudeOilBlending',
       python_requires='>=3.8',
       install_requires=requirements,
       packages=find_packages())

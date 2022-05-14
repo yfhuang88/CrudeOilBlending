@@ -1,0 +1,8 @@
+# pip-installable
+matplotlib
+numpy
+tqdm
+selenium 
+pandas 
+xlrd
+webdriver_manager

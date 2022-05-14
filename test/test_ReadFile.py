@@ -3,7 +3,7 @@ import os
 
 def test_getdatafromwebsite():
     num_files = 1
-    download_path = os.getcwd() + "/tmp/data/"
+    download_path = os.getcwd() + "\\tmp\\data\\"
     stream_ = ["RA"]
     page_url = "https://www.crudemonitor.ca/crudes/index.php?acr="
 

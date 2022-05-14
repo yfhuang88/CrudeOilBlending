@@ -30,7 +30,7 @@ jobs:
     - name: Install pytest
       run: |
         pip install pytest
-    - name: Install pyib
+    - name: Install CrudeOilBlending
       run: |
         pip install .
     - name: test
@@ -39,5 +39,5 @@ jobs:
         mkdir -p tmp/
         cd tmp/
         mkdir -p data/
-        cd ../../
+        cd ../
         python -m pytest

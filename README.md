@@ -16,3 +16,8 @@ mkdir -p data
 python -m CrudeOilBlending input.json
 ```
 A portion of the input.json file is provided below, the user needs to change the oil blend, volume as well as the folder at which they want to store the data 
+
+
+### Example output
+An example of the output would look something like the following 
+![mixture_3](/CrudeOilBlending/scripts/mixture_3.png)

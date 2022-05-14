@@ -10,12 +10,13 @@ The distillation profile of a mixture with i crude oil stream is calculated usin
 ![equation](https://latex.codecogs.com/svg.image?\bg{white}\textit{f}_{mix}&space;=&space;\sum&space;\textit{m}_{i}\textit{f}_{i})
 
 ## Assumption
-It is assumed that the specific heat of the mixture is the sum of the specific heat of each crude oil stream multiplied by mass fraction, and the enthalpy of vaporization of the mixture is the sum of the enthalpy of vaporization of each crude oil stream multiplied by mass fraction, as the following equations show. <br />
+It is assumed that the enthalpy of mixing is negligble, and the molecules interact in a similar mannaer in original and mixed crude oil streams. Based on these assumptions, the specific heat and enthalpy of vaporization of the mixture can be approximated using the weighted average of feeder streams. <br />
 ![equation](https://latex.codecogs.com/svg.image?\bg{white}\textit{C}_{p,&space;mix}&space;=&space;\textit{m}_{i}\textit{C}_{p,&space;i}) <br />
-![equation](https://latex.codecogs.com/svg.image?\bg{white}\Delta&space;\textsl{H}_{vap,&space;mix}&space;=\sum&space;&space;\textit{m}_{i}\Delta&space;\textsl{H}_{vap,&space;i})
+![equation](https://latex.codecogs.com/svg.image?\bg{white}\Delta&space;\textsl{H}_{vap,&space;mix}&space;=\sum&space;&space;\textit{m}_{i}\Delta&space;\textsl{H}_{vap,&space;i}) <br />
+Although the specific heat and enthalpy of vaporization is not direclty avaialbe for the feeder streams, it is presumed that the distillation profile of feeder streams implicitly contains this information. Therefore, the weighted average of distillation profile functions of feeder stream is used to estimate that of the mixture. 
 
 ## Running the code 
-To install to code, make sure you are in the top directory of the code folder and execute the following command 
+To install to code, the user needs to be in the top directory of the code folder and execute the following command 
 ```bash
 python setup.py install
 ```

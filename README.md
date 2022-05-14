@@ -20,4 +20,4 @@ A portion of the input.json file is provided below, the user needs to change the
 
 ### Example output
 An example of the output would look something like the following 
-![mixture_3](/crudeoilblending/scripts/mixture_3.png)
+![mixture_3](/scripts/mixture_3.png)

@@ -33,7 +33,7 @@ jobs:
     - name: Install pyib
       run: |
         pip install .
-    - name: tests
+    - name: test
       run: |
-        cd tests/
+        cd test/
         python -m pytest

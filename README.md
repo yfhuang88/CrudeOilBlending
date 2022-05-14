@@ -20,15 +20,18 @@ To install to code, the user needs to be in the top directory of the code folder
 ```bash
 python setup.py install
 ```
-The run the code. Create a new directory and make sure you create a folder called data/. Then run the following command and an example for input.json file will be provided in the scripts folder. 
+Then run the code. Create a new directory and make sure you create a folder called data/. Then run the following command and an example for input.json file will be provided in the scripts folder. 
 ```bash
 mkdir -p NewDirectory
 cd NewDirectory
 mkdir -p data
 python -m CrudeOilBlending input.json
 ```
-A portion of the input.json file is provided below, the user needs to change the oil blend, volume as well as the folder at which they want to store the data 
-
+A portion of the input.json file is provided below. Feeder oil stream and volume can be updated as desired. Note that feeder oil stream can only be chosen from the streams that were selected for analysis, as defined in main.py. 
+```bash
+"Oil" : ["Rainbow", "Bow River North", "Fosterton"],
+"Volume" : [100, 50, 50],
+```
 
 ### Example output
 An example of the output would look something like the following 

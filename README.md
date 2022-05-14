@@ -1,7 +1,13 @@
 # crudeoilblending
 
 ## Description
+Estimating the distillation profile of crude oil mixtures based on the distillation profiles of different crude oil streams. 
 
+## Approach
+Distillation profile of selected crude oil streams found on CrudeMonitor.ca are modelled independently through polynomial regression. A polynomial function (f) with temperature as input and percent mass recovered as output is fitted for each crude oil stream. 
+
+The distillation profile of a mixture with i crude oil stream is calculated using the below equation, where mi is the mass fraction of crude oil stream i. 
+![equation](https://latex.codecogs.com/svg.image?\textit{f}_{mix}&space;=&space;\sum&space;\textit{m}_{i}\textit{f}_{i})
 
 ## Running the code 
 To install to code, make sure you are in the top directory of the code folder and execute the following command 

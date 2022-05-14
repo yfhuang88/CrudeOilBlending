@@ -4,6 +4,6 @@
 
 
 ## Running the code 
-'''bash
-pip install -e ./
-'''
+```bash
+python setup.py install
+```

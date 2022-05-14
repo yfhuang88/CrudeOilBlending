@@ -11,8 +11,8 @@ The distillation profile of a mixture with i crude oil stream is calculated usin
 
 ## Assumption
 It is assumed that the specific heat of the mixture is the sum of the specific heat of each crude oil stream multiplied by mass fraction, and the enthalpy of vaporization of the mixture is the sum of the enthalpy of vaporization of each crude oil stream multiplied by mass fraction, as the following equations show. <br />
-![equation](https://latex.codecogs.com/svg.image?\bg{white}\textit{C}_{p,&space;mix}&space;=&space;\sum&space;\textit{m}_{i}\textit{C}_{pi})
-
+![equation](https://latex.codecogs.com/svg.image?\bg{white}\textit{C}_{p,&space;mix}&space;=&space;\textit{m}_{i}\textit{C}_{p,&space;i}) <br />
+![equation](https://latex.codecogs.com/svg.image?\bg{white}\Delta&space;\textsl{H}_{vap,&space;mix}&space;=\sum&space;&space;\textit{m}_{i}\Delta&space;\textsl{H}_{vap,&space;i})
 
 ## Running the code 
 To install to code, make sure you are in the top directory of the code folder and execute the following command 

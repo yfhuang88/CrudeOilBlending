@@ -31,6 +31,9 @@ A portion of the input.json file is provided below. Feeder oil stream and volume
 ```bash
 "Oil" : ["Rainbow", "Bow River North", "Fosterton"],
 "Volume" : [100, 50, 50],
+"numfiles" : 10,
+"page_url" : "https://www.crudemonitor.ca/crudes/index.php?acr=",
+"degree"   : 4
 ```
 
 ### Example output

@@ -1,4 +1,4 @@
-# crudeoilblending
+# CrudeOilBlending
 
 ## Description
 Estimating the distillation profile of crude oil mixtures based on the distillation profiles of different crude oil streams. 

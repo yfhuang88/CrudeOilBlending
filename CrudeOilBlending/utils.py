@@ -31,9 +31,8 @@ def GetCrudeProfile(stream:list, page_url:str, download_path:str,  num_files=20,
     # remove all files from download_path
     if rm_files:
         print("WARNING: Removing all files in {}".format(download_path))
-        #TODO user input, exit if not removing files
-        
-        for f in os.listdir(download_path):
+        files = [f for f in os.listdir(download_path) if f.endswith("xls") or f.endswith("xlsx")] 
+        for f in files:
             os.remove(download_path + f)
     
     # Add download preference 
@@ -70,8 +69,9 @@ def ProcessCrudeOilData(data_path:str):
 
     PROPERTY_LIST =  ['GRAV','SUL','V','NI','MCRT']  
     MapCrudeOilNameToProperties = {}
+    files = [f for f in os.listdir(data_path) if f.endswith("xls") or f.endswith("xlsx")]
     
-    for f in os.listdir(data_path):
+    for f in files:
         # Read pandas
         workbook = xlrd.open_workbook_xls(data_path+f, ignore_workbook_corruption=True)
         

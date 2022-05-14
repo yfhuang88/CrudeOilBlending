@@ -36,4 +36,5 @@ jobs:
     - name: test
       run: |
         cd test/
+        mkdir tmp/data/
         python -m pytest

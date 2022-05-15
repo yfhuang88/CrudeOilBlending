@@ -96,4 +96,9 @@ def main():
     plt.ylim([0,100])
     plt.xlabel("Temperature (C)")
     plt.ylabel("Percent Mass Recovery")
-    plt.savefig('_'.join(oiltype)+'.png')
+
+    arr = np.column_stack((Frac, T))
+
+    filename = '_'.join(oiltype)
+    plt.savefig(filename+'.png')
+    np.savetxt(filename+'.txt', arr, fmt='%f', header='Mass Recovered (%), Temperature (C)')

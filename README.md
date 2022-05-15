@@ -27,7 +27,7 @@ cd NewDirectory
 mkdir -p data
 python -m CrudeOilBlending input.json
 ```
-The sample input.json file is provided below. Feeder oil stream and volume can be updated as desired. Note that feeder oil stream can only be chosen from the streams included in main.py. 
+The sample input.json file is provided below. Feeder oil stream and volume can be updated as desired. Note that feeder oil stream can only be chosen from the streams included in the MapFromRealNameToWebsiteName dictionary in main.py. To include a new stream, add its full name and website name to the dictionary. 
 ```bash
 "Oil" : ["Rainbow", "Bow River North", "Fosterton"],
 "Volume" : [100, 50, 50],
@@ -35,11 +35,6 @@ The sample input.json file is provided below. Feeder oil stream and volume can b
 "page_url" : "https://www.crudemonitor.ca/crudes/index.php?acr=",
 "degree"   : 4
 ```
-Supported feeder streams are shown below
-```bash
-["Federated", "Light Smiley", "Peace", "Pembina", "Secure Sask Light", "Mixed Sweet Blend", "Rainbow", "BC Light", "Boundary Lake", "Koch Alberta", "Moose Jaw Tops", "Pembina Light Sour", "Hardisty Light", "Medium Gibson Sour", "Midale", "Peace Pipe Sour", "Bow River North", "Bow River South", "Fosterton", "Lloyd Blend", "Access Wester Blend", "Borealis Heavy Blend", "Canadian Natural High Tan"]
-```
-To include a new stream, add it to the MapFromRealNameToWebsiteName dictionary in main.py. 
 
 ### Example output
 An example of the output would look something like the following 

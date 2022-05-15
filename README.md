@@ -28,7 +28,7 @@ Then run the following command. An example for the input.json file is provided i
 ```bash
 python -m CrudeOilBlending input.json
 ```
-The sample input.json file is provided below. Feeder oil stream and volume can be updated as desired. 
+The example input.json file is provided below. Feeder oil stream and volume can be updated as desired. 
 ```bash
 "Oil" : ["Rainbow", "Bow River North", "Fosterton"],
 "Volume" : [100, 50, 50],

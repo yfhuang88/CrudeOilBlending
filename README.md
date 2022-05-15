@@ -39,5 +39,5 @@ Note that feeder oil stream can only be chosen from the streams included in the 
 
 ### Example output
 The output includes a distillation profile plot like the following
-![mixture_profile](/scripts/Rainbow_Bow River North.png)
+![mixture_profile](./scripts/Rainbow_Bow River North.png)
 as well as a .txt file with the plotted data. 

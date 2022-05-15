@@ -18,7 +18,7 @@ Although the specific heat and enthalpy of vaporization is not directly availabl
 ## Running the code 
 To install to code, the user needs to be in the top directory of the code folder and execute the following command 
 ```bash
-python setup.py install
+pip install -e .\
 ```
 Then run the code. Create a new directory and make sure you create a folder called data/. Then run the following command and an example for input.json file will be provided in the scripts folder. 
 ```bash
@@ -27,7 +27,7 @@ cd NewDirectory
 mkdir -p data
 python -m CrudeOilBlending input.json
 ```
-A portion of the input.json file is provided below. Feeder oil stream and volume can be updated as desired. Note that feeder oil stream can only be chosen from the streams that were selected for analysis, as defined in main.py. 
+The sample input.json file is provided below. Feeder oil stream and volume can be updated as desired. Note that feeder oil stream can only be chosen from the streams included in main.py. 
 ```bash
 "Oil" : ["Rainbow", "Bow River North", "Fosterton"],
 "Volume" : [100, 50, 50],
@@ -35,6 +35,11 @@ A portion of the input.json file is provided below. Feeder oil stream and volume
 "page_url" : "https://www.crudemonitor.ca/crudes/index.php?acr=",
 "degree"   : 4
 ```
+Supported feeder streams are shown below
+```bash
+["Federated", "Light Smiley", "Peace", "Pembina", "Secure Sask Light", "Mixed Sweet Blend", "Rainbow", "BC Light", "Boundary Lake", "Koch Alberta", "Moose Jaw Tops", "Pembina Light Sour", "Hardisty Light", "Medium Gibson Sour", "Midale", "Peace Pipe Sour", "Bow River North", "Bow River South", "Fosterton", "Lloyd Blend", "Access Wester Blend", "Borealis Heavy Blend", "Canadian Natural High Tan"]
+```
+To include a new stream, add it to the MapFromRealNameToWebsiteName dictionary in main.py. 
 
 ### Example output
 An example of the output would look something like the following 

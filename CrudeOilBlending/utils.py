@@ -212,7 +212,7 @@ def GetMixtureProfile(OilTypes:list, Volumes:list, GRAV:dict, polyparams:dict):
     # weight average of the parameters
     params = []
     pureEstimate = []
-    T = np.linspace(30,700,100)
+    T = np.linspace(30,750,100)
     for (i,t) in enumerate(OilTypes):
         params.append(polyparams[t]) 
         pureEstimate.append(np.poly1d(polyparams[t])(T))

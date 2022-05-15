@@ -21,7 +21,6 @@ To install the code, the user needs to be in the top directory of the code folde
 pip install -e .\
 ```
 To run the code, the user needs to create a new directory called data/ in the same folder. 
-```
 ```bash
 mkdir -p data
 ```

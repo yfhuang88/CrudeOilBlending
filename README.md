@@ -27,7 +27,7 @@ cd NewDirectory
 mkdir -p data
 python -m CrudeOilBlending input.json
 ```
-The sample input.json file is provided below. Feeder oil stream and volume can be updated as desired. Note that feeder oil stream can only be chosen from the streams included in the MapFromRealNameToWebsiteName dictionary in main.py. To include a new stream, add its full name and website name to the dictionary. 
+The sample input.json file is provided below. Feeder oil stream and volume can be updated as desired. 
 ```bash
 "Oil" : ["Rainbow", "Bow River North", "Fosterton"],
 "Volume" : [100, 50, 50],
@@ -35,7 +35,9 @@ The sample input.json file is provided below. Feeder oil stream and volume can b
 "page_url" : "https://www.crudemonitor.ca/crudes/index.php?acr=",
 "degree"   : 4
 ```
+Note that feeder oil stream can only be chosen from the streams included in the MapFromRealNameToWebsiteName dictionary in main.py. To include a new stream, add its full name and website name to the dictionary. 
 
 ### Example output
-An example of the output would look something like the following 
-![mixture_3](/scripts/mixture_3.png)
+The output includes a distillation profile plot like the following
+![mixture_profile](/scripts/"Rainbow_Bow River North.txt")
+as well as a .txt file with the plotted data. 

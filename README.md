@@ -16,15 +16,17 @@ It is assumed that the enthalpy of mixing is negligible, and the molecules inter
 Although the specific heat and enthalpy of vaporization is not directly available for the feeder streams, it is presumed that the distillation profile of feeder streams implicitly contains this information. Therefore, the weighted average of distillation profile functions of feeder stream is used to estimate that of the mixture. 
 
 ## Running the code 
-To install to code, the user needs to be in the top directory of the code folder and execute the following command 
+To install the code, the user needs to be in the top directory of the code folder and execute the following command. 
 ```bash
 pip install -e .\
 ```
-Then run the code. Create a new directory and make sure you create a folder called data/. Then run the following command and an example for input.json file will be provided in the scripts folder. 
+To run the code, the user needs to create a new directory called data/ in the same folder. 
+```
 ```bash
-mkdir -p NewDirectory
-cd NewDirectory
 mkdir -p data
+```
+Then run the following command. An example for the input.json file is provided in the scripts folder. 
+```bash
 python -m CrudeOilBlending input.json
 ```
 The sample input.json file is provided below. Feeder oil stream and volume can be updated as desired. 
@@ -35,7 +37,7 @@ The sample input.json file is provided below. Feeder oil stream and volume can b
 "page_url" : "https://www.crudemonitor.ca/crudes/index.php?acr=",
 "degree"   : 4
 ```
-Note that feeder oil stream can only be chosen from the streams included in the MapFromRealNameToWebsiteName dictionary in main.py. To include a new stream, add its full name and website name to the dictionary. 
+Note that feeder oil stream can only be chosen from streams included in the MapFromRealNameToWebsiteName dictionary in main.py. To include a new stream, add its full name and website name to the dictionary. 
 
 ### Example output
 The output includes a distillation profile plot like the following and a .txt file with the plotted data. 

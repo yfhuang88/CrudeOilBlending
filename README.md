@@ -38,8 +38,5 @@ The sample input.json file is provided below. Feeder oil stream and volume can b
 Note that feeder oil stream can only be chosen from the streams included in the MapFromRealNameToWebsiteName dictionary in main.py. To include a new stream, add its full name and website name to the dictionary. 
 
 ### Example output
-The output includes a distillation profile plot like the following
-
+The output includes a distillation profile plot like the following and a .txt file with the plotted data. 
 ![mixture_profile](/scripts/Rainbow_Bow%20River%20North.png)
-
-as well as a .txt file with the plotted data. 

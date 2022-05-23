@@ -235,8 +235,8 @@ def GetMixtureProfile(OilTypes:list, Volumes:list, GRAV:dict, polyparams:dict, d
         stds = []
         TT = np.vstack([T**(deg-i) for i in range(deg+1)]).T
         for (i,t) in enumerate(OilTypes): 
-            C_yi = np.dot(TT, np.dot(covmats[t], TT.T))
-            stds.append(np.sqrt(np.diag(C_yi)))
+            cov_i = np.dot(TT, np.dot(covmats[t], TT.T))
+            stds.append(np.sqrt(np.diag(cov_i)))
     
         stds = np.vstack([std for std in stds]).sum(axis=0)
         return pureEstimate, poly(T), T, stds

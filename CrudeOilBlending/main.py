@@ -82,23 +82,24 @@ def main():
     AvgTemp = CalculatedAverageTemperature(dic)
     
     # Obtain the polynomial fitting of (Temperature, COmposition)
-    fitParameters = polyfit(AvgTemp,deg=degree)
+    fitParameters, covmats = polyfit(AvgTemp, deg=degree)
 
     GRAV = GetAvgOilProperty(dic, 'GRAV')
-    PureFrac , Frac, T = GetMixtureProfile(oiltype, Volumes, GRAV,fitParameters)
+    PureFrac , Frac, T, Errs = GetMixtureProfile(oiltype, Volumes, GRAV, fitParameters, deg=degree, covmats=covmats)
 
     ax = plt.figure(figsize=(10,8)).add_subplot()
     for (i,t) in enumerate(oiltype):
-        ax.plot(T, PureFrac[i], label=t)
-    ax.plot(T, Frac, label='Mixture')
+        ax.plot(T, PureFrac[i], label=t, linewidth=0.7)
+    ax.plot(T, Frac, label='Mixture',  linewidth=0.7)
+    ax.fill_between(T, Frac+Errs, Frac-Errs, alpha=.25)
     ax.legend(fontsize=15)
     plt.xlim([0,750])
     plt.ylim([0,100])
     plt.xlabel("Temperature (C)")
     plt.ylabel("Percent Mass Recovery")
 
-    arr = np.column_stack((Frac, T))
+    arr = np.column_stack((Frac, Frac+Errs, Frac-Errs, T))
 
     filename = '_'.join(oiltype)
     plt.savefig(filename+'.png')
-    np.savetxt(filename+'.txt', arr, fmt='%f', header='Mass Recovered (%), Temperature (C)')
+    np.savetxt(filename+'.txt', arr, fmt='%f', header='Mass Recovered (%), Mass Recovered High (%), Mass Recovered Low (%), Temperature (C)')

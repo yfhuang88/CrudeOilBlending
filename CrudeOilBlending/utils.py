@@ -180,7 +180,7 @@ def GetAvgOilProperty(dic:dict, OilProperty:list):
     
     return OilProp
 
-def GetMixtureProfile(OilTypes:list, Volumes:list, GRAV:dict, polyparams:dict):
+def GetMixtureProfile(OilTypes:list, Volumes:list, GRAV:dict, polyparams:dict, deg:int, covmats:dict=None):
     """
     Parameters
     ----------
@@ -195,6 +195,12 @@ def GetMixtureProfile(OilTypes:list, Volumes:list, GRAV:dict, polyparams:dict):
     
     Polyparams : dict
         Dictionary holding the polynomial coefficients fitted for the Temperature (X) Percent Mass Recovery (y) curve for each crude oil stream type
+    
+    Deg: int
+        Degree of the fitted polynomial function
+
+    Covmats : dict
+        Dictionary holding the covariance matrices of the polynomial coefficients for each crude oil stream type
 
     """
     assert len(OilTypes) == len(Volumes), "Input error" 
@@ -224,5 +230,16 @@ def GetMixtureProfile(OilTypes:list, Volumes:list, GRAV:dict, polyparams:dict):
     params = (params * weights[:,np.newaxis]).sum(axis=0)
     poly   = np.poly1d(params)
 
-
-    return pureEstimate, poly(T), T
+    # weighted error
+    if covmats: 
+        stds = []
+        TT = np.vstack([T**(deg-i) for i in range(deg+1)]).T
+        for (i,t) in enumerate(OilTypes): 
+            C_yi = np.dot(TT, np.dot(covmats[t], TT.T))
+            stds.append(np.sqrt(np.diag(C_yi)))
+    
+        stds = np.vstack([std for std in stds]).sum(axis=0)
+        return pureEstimate, poly(T), T, stds
+    
+    else: 
+        return pureEstimate, poly(T), T
